@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		title Pics - #{head.title}
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="renderer" content="webkit")
+		meta(name="theme-color" content="#222325")
+		meta(name="apple-mobile-web-app-status-bar-style" content="#222325")
+		meta(name="msapplication-navbutton-color" content="#222325")
+		link(rel="stylesheet" href="css/pics.css")
+		meta(name="description" content=head.description)
+		link(rel="icon" href="favicon.ico" type="image/x-icon")
+		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+
+	body
+		main
+			.content.content-pics
+				#pics-gallery
+					header
+						h1(data-translate="name") #{main.name}
+						h2 My Pictures
+
+					.gallery-container
+						each pic in pics
+							.pic-item
+								a(href=pic.url target="_blank")
+									img(src=pic.thumbnail alt=pic.title)
+									.pic-overlay
+										.pic-title #{pic.title}
+										.pic-desc #{pic.description}

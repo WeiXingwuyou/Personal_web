@@ -157,6 +157,97 @@ If your previous `username. github.io` repo already has content, you can create 
 
 
 
+## Adding Pictures to Pics Page
+
+The Pics page allows you to showcase your image gallery. To add pictures:
+
+1. Open the `pics.json` file in the root directory
+2. Add your picture details to the `pics` array with the following structure:
+
+```json
+{
+  "pics": [
+    {
+      "title": "Your Picture Title",
+      "description": "A brief description of the picture",
+      "thumbnail": "URL to thumbnail image",
+      "url": "URL to full-size image"
+    }
+  ]
+}
+```
+
+3. After modifying `pics.json`, run `npm run build` to rebuild the project
+4. The pictures will be displayed in the Pics page accessible at `/pics.html`
+
+**Tips:**
+- Use thumbnail images for better performance (recommended size: 300x200)
+- The gallery is responsive and works on both desktop and mobile devices
+- Pictures are displayed in a grid layout with hover effects
+- Clicking on a picture will open it in a new tab at full size
+
+## Editing the About Page
+
+The About page displays a personal introduction with markdown support and icon support in headings. To edit:
+
+1. Open the `about.md` file in the root directory
+2. Edit the content using standard markdown syntax
+3. You can use emojis in headings (e.g., `## 🚀 About Me`)
+4. After modifying `about.md`, run `npm run build` to rebuild the project
+5. The updated content will be displayed in the About page accessible at `/about.html`
+
+**Supported Markdown Features:**
+- Headings with icons (using emojis)
+- Lists (ordered and unordered)
+- Links
+- Bold and italic text
+- Code blocks and inline code
+- Blockquotes
+- Tables
+- Horizontal rules
+- Images
+
+The page automatically renders markdown to HTML with a minimalist geek-style design, consistent with the overall project theme.
+
+## Adding Projects to Projects Page
+
+The Projects page showcases your projects in a timeline format with automatic date sorting and view switching capabilities. To add projects:
+
+1. Open the `projects.json` file in the root directory
+2. Add your project details to the `projects` array with the following structure:
+
+```json
+{
+  "projects": [
+    {
+      "title": "Project Name",
+      "description": "A brief description of the project",
+      "date": "2024-01-15",
+      "tags": ["React", "Node.js", "MongoDB"],
+      "link": "https://github.com/username/project",
+      "image": "https://via.placeholder.com/400x300"
+    }
+  ]
+}
+```
+
+3. After modifying `projects.json`, run `npm run build` to rebuild the project
+4. The projects will be displayed in the Projects page accessible at `/projects.html`
+
+**Features:**
+- **Automatic Date Sorting**: Projects are automatically sorted by date (newest first)
+- **View Toggle**: Switch between Simple View and Detail View using buttons in the top-right corner
+  - **Simple View**: Shows only title, date, and project link
+  - **Detail View**: Shows complete information including image, description, and tags
+- **Responsive Design**: Works on both desktop and mobile devices
+- **Timeline Layout**: Projects are displayed in a visually appealing timeline with hover effects
+
+**Tips:**
+- Use the ISO date format (YYYY-MM-DD) for proper sorting
+- The image field is optional; projects without images will display without the image section
+- Use descriptive tags to help categorize your projects
+- Images are recommended to be 400x300 pixels for optimal display
+
 ## Sponsor
 I spent a lot of time and energy to develop this project.
 

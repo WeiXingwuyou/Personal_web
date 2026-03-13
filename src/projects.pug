@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+	head
+		title Projects - #{head.title}
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="renderer" content="webkit")
+		meta(name="theme-color" content="#222325")
+		meta(name="apple-mobile-web-app-status-bar-style" content="#222325")
+		meta(name="msapplication-navbutton-color" content="#222325")
+		link(rel="stylesheet" href="css/projects.css")
+		meta(name="description" content=head.description)
+		link(rel="icon" href="favicon.ico" type="image/x-icon")
+		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+
+	body
+		main
+			.content.content-projects
+				#projects-container
+					header
+						h1(data-translate="name") #{main.name}
+						h2 My Projects
+						.view-toggle
+							button#simple-view.active(title="Simple View")
+								svg.icon(viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20")
+									path(d="M128 128h768v85.333333H128z m0 341.333333h768v85.333334H128z m0 341.333334h768v85.333333H128z" fill="currentColor")
+							button#detail-view(title="Detail View")
+								svg.icon(viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20")
+									path(d="M128 128h298.666667v298.666667H128zM469.333333 128h426.666667v298.666667H469.333333zM128 469.333333h298.666667v426.666667H128zM469.333333 469.333333h426.666667v426.666667H469.333333z" fill="currentColor")
+
+					.timeline#timeline
+						each project, index in projects
+							.timeline-item(data-date=project.date data-index=index)
+								.timeline-content
+									if project.image
+										.project-image
+											img(src=project.image alt=project.title)
+									.project-info
+										h3.project-title= project.title
+										.project-date= project.date
+										.project-description= project.description
+										.project-tags
+											each tag in project.tags
+												.tag= tag
+										.project-link
+											a(href=project.link target="_blank") View Project
+
+		script(src="js/projects.js")

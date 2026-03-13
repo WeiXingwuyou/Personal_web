@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "title": "HomePage",
+      "description": "A modern and elegant personal homepage with fluid animation background, responsive design and smooth page transitions.",
+      "date": "2024-01-15",
+      "tags": ["Vue", "JavaScript", "Animation"],
+      "link": "https://github.com/SimonAKing/HomePage",
+      "image": "https://via.placeholder.com/400x300"
+    },
+    {
+      "title": "Another Project",
+      "description": "This is another example project. Add your own projects here.",
+      "date": "2023-12-01",
+      "tags": ["React", "Node.js"],
+      "link": "https://github.com/",
+      "image": "https://via.placeholder.com/400x300"
+    }
+  ]
+}

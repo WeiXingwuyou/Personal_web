@@ -1,18 +1,18 @@
 {
 	"head": {
-		"title": "SimonAKing",
+		"title": "Gavin",
 		"description": "Author:SimonAKing,Category:Personal Blog",
 		"favicon": "favicon.ico"
 	},
 	"intro": {
-		"title": "SimonAKing",
+		"title": "Gavin",
 		"subtitle": "Front back left right end engineer",
 		"enter": "enter",
 		"supportAuthor": true,
 		"background": true
 	},
 	"main": {
-		"name": "SimonAKing",
+		"name": "Gavin",
 		"signature": "Code & Input & Output",
 		"avatar": {
 			"link": "assets/avatar.jpg",
@@ -21,24 +21,29 @@
 		},
 		"ul": {
 			"first": {
-				"href": "blog/",
-				"icon": "bokeyuan",
-				"text": "Blog"
+				"href": "projects.html",
+				"icon": "projects",
+				"text": "Projects"
 			},
 			"second": {
-				"href": "about/",
+				"href": "pics.html",
+				"icon": "pics",
+				"text": "Pics"
+			},
+			"third": {
+				"href": "about.html",
 				"icon": "xiaolian",
 				"text": "About"
 			},
-			"third": {
-				"href": "mailto:hi@simonaking.com",
+			"fourth": {
+				"href": "mailto:wgx@baishuijianxin.top",
 				"icon": "email",
 				"text": "Email"
 			},
-			"fourth": {
-				"href": "https://github.com/SimonAKing",
-				"icon": "github",
-				"text": "Github"
+			"fifth": {
+				"href": "https://www.yuque.com/weiguoxian",
+				"icon": "yuque",
+				"text": "yuque"
 			}
 		}
 	}
