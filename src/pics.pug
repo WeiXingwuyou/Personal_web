@@ -23,8 +23,8 @@ html(lang="en")
 						h2 My Pictures
 
 					.gallery-container
-						each pic in pics
-							.pic-item
+						each pic, index in pics
+							.pic-item(class=pic.size ? pic.size : '')
 								a(href=pic.url target="_blank")
 									img(src=pic.thumbnail alt=pic.title)
 									.pic-overlay

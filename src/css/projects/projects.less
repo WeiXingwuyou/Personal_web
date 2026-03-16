@@ -1,15 +1,21 @@
 .content-projects {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100vw;
-	min-height: 100vh;
+	height: 100vh;
 	background: #222325;
-	padding: 40px 20px;
+	padding: 0;
 	color: #fff;
 	font-family: 'Comic Sans MS', 'Helvetica Neue', 'Microsoft Yahei', -apple-system, sans-serif !important;
+	overflow-x: hidden;
+	overflow-y: auto;
 
 	header {
 		text-align: center;
-		margin-bottom: 60px;
+		margin: 40px 20px 60px;
 		position: relative;
 
 		h1 {
@@ -66,6 +72,7 @@
 	#projects-container {
 		max-width: 1000px;
 		margin: 0 auto;
+		padding: 0 20px 40px;
 	}
 
 	.timeline {
@@ -232,6 +239,7 @@
 
 	@media screen and (max-width: 768px) {
 		header {
+			margin: 30px 20px 50px;
 			h1 {
 				font-size: 2rem;
 			}
@@ -256,10 +264,15 @@
 		}
 
 		.timeline-item {
+			margin-bottom: 30px;
 			&::before {
 				left: -20px;
 				width: 10px;
 				height: 10px;
+			}
+
+			&:hover {
+				transform: translateX(5px);
 			}
 		}
 
@@ -271,6 +284,55 @@
 	}
 
 	@media screen and (max-width: 480px) {
+		header {
+			margin: 20px 15px 40px;
+			h1 {
+				font-size: 1.8rem;
+			}
+
+			h2 {
+				font-size: 0.9rem;
+			}
+		}
+
+		.timeline {
+			padding-left: 25px;
+
+			&::before {
+				left: 8px;
+			}
+		}
+
+		.timeline-item {
+			margin-bottom: 25px;
+			&::before {
+				left: -17px;
+				width: 8px;
+				height: 8px;
+			}
+
+			.timeline-content {
+				padding: 20px;
+			}
+		}
+
+		.project-info {
+			.project-title {
+				font-size: 1.2rem;
+			}
+
+			.project-description {
+				font-size: 0.95rem;
+			}
+
+			.project-link {
+				a {
+					padding: 8px 20px;
+					font-size: 0.9rem;
+				}
+			}
+		}
+
 		.timeline.simple-view {
 			.timeline-content {
 				flex-direction: column;

@@ -3,13 +3,39 @@
 		{
 			"title": "示例图片1",
 			"description": "这是一个示例图片",
-			"thumbnail": "https://via.placeholder.com/300x200",
+			"thumbnail": "https://via.placeholder.com/600x400",
 			"url": "https://via.placeholder.com/800x600"
 		},
 		{
 			"title": "示例图片2",
 			"description": "这是另一个示例图片",
-			"thumbnail": "https://via.placeholder.com/300x200",
+			"thumbnail": "https://via.placeholder.com/600x400",
+			"url": "https://via.placeholder.com/800x600"
+		},
+		{
+			"title": "示例图片3",
+			"description": "大尺寸图片",
+			"thumbnail": "https://via.placeholder.com/600x400",
+			"url": "https://via.placeholder.com/800x600",
+			"size": "large"
+		},
+		{
+			"title": "示例图片4",
+			"description": "这是第四个示例图片",
+			"thumbnail": "https://via.placeholder.com/600x400",
+			"url": "https://via.placeholder.com/800x600"
+		},
+		{
+			"title": "示例图片5",
+			"description": "宽幅图片",
+			"thumbnail": "https://via.placeholder.com/600x400",
+			"url": "https://via.placeholder.com/800x600",
+			"size": "wide"
+		},
+		{
+			"title": "示例图片6",
+			"description": "这是第六个示例图片",
+			"thumbnail": "https://via.placeholder.com/600x400",
 			"url": "https://via.placeholder.com/800x600"
 		}
 	]

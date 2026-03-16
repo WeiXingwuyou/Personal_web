@@ -1,4 +1,4 @@
-# SimonAKing-HomePage
+# Gavin-HomePage
 
 [English Version](<README.md>)
 
@@ -9,8 +9,6 @@
 
 ![preview](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMncyb3oyc21zc3czejU3cGk4M2tiNTdkaTM0N3FodGVpZmU5azNxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fhXFCZEogq39rOpKUi/giphy.gif)
 
-[在线浏览](http://simonaking.com)
-
 嗯哼，你想为网站装上如此酷炫的主页吗?
 
 下面就让我们开始吧！
@@ -19,8 +17,8 @@
 ## 安装步骤
 
 ```sh
-git clone https://github.com/SimonAKing/HomePage.git
-cd HomePage
+git clone https://github.com/WeiXingwuyou/Personal_web.git
+cd Personal_web
 npm install
 npm run dev
 ```
@@ -61,7 +59,7 @@ npm run dev
 ```json
 {
 	"head": {
-		"title": "SimonAKing",
+		"title": "Gavin",
 		"description": "Category:Personal Blog",
 		"favicon": "favicon.ico"
 	}
@@ -141,13 +139,13 @@ head
    git init
    git add -A
    git commit -am"init"
-   git remote add origin https://github.com/你的用户名/你的用户名.github.io.git
+   git remote add origin https://github.com/WeiXingwuyou/WeiXingwuyou.github.io.git
    git push -f origin master
    ```
 
 3. 然后在`Github`设置好仓库的`GithubPage` 选项
 
-4. 访问 `你的用户名.github.io` 即可浏览啦！
+4. 访问 `WeiXingwuyou.github.io` 即可浏览啦！
 
 
 
@@ -159,6 +157,10 @@ head
 
 如此一来，你的`用户名.github.io`仓库便可留给首页了！
 
+## 原始项目地址
+感谢开源作者 [SimonAKing](https://github.com/SimonAKing)。
+项目地址：
+https://github.com/SimonAKing/HomePage
 
 
 ## 赞助
