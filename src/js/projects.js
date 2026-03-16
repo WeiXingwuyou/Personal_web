@@ -27,10 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			return dateB - dateA;
 		});
 
-		// 重新插入排序后的元素
 		items.forEach(item => timeline.appendChild(item));
 	}
 
 	// 初始化时进行排序
 	sortTimelineItems();
+
+	// 设置默认为详细视图
+	timeline.classList.remove('simple-view');
+	detailViewBtn.classList.add('active');
+	simpleViewBtn.classList.remove('active');
 });

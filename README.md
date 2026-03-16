@@ -1,69 +1,72 @@
-# SimonAKing-HomePage
+# Gavin-HomePage
 
-[中文版说明](<README.zh_CN.md>)
+[Chinese Version](<README.zh_CN.md>)
 
-## Introduction
 
-> A modern and elegant personal homepage with fluid animation background, responsive design and smooth page transitions.
+## Project Introduction
+
+> A modern and elegant personal homepage with fluid animation background, responsive design, and smooth page transitions.
 
 ![preview](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMncyb3oyc21zc3czejU3cGk4M2tiNTdkaTM0N3FodGVpZmU5azNxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fhXFCZEogq39rOpKUi/giphy.gif)
 
-[Online browsing](http://simonaking.com)
+Want to install such a cool homepage for your website?
 
-Do you want to install such a cool homepage for your website?
+Let's get started!
 
-Let's start now!
 
-## Install
+## Installation Steps
 
 ```sh
-git clone https://github.com/SimonAKing/HomePage.git
-cd HomePage
+git clone https://github.com/WeiXingwuyou/Personal_web.git
+cd Personal_web
 npm install
 npm run dev
 ```
 
+
+
 ## Features
 
-1. Highly encapsulates all the information in the page
+1. Highly encapsulated all information in the page
 2. Use [WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) as background
 3. Use `less` as `css` preprocessor
 4. Use `pug` as `html` preprocessor
-5. Use `gulp` as a build tool and configure the build script
-6. Comfortable animation and beautiful UI
-7. Responsive, mobile support
-8. The referenced `css` and`js` files do not exceed `18.5` kb in total!
-9. Delayed response switch page event
-10. There are many features left for you to explore...
+5. Use `gulp` as build tool, with build scripts configured
+6. Comfortable animations and beautiful `UI`
+7. Responsive, seamlessly supports mobile devices
+8. Total size of referenced `css` and `js` files is less than `18.5` kb!
+9. Delayed response to page switching events
+10. Many more features for you to explore...
 
 
-## Structure
 
-According to the characteristics of the project, it is divided into two categories：
+## Project Structure
+
+According to project characteristics, it is divided into two main categories:
 1. `intro` First screen
 2. `main` Secondary screen
 
-The corresponding functions, styles and configurations are also based on this standard.
+Corresponding functions, styles, and configurations are also based on this standard.
 
 
 
-## Basic configuration
+## Basic Configuration
 
-Each key name in the config.json file`config.json` corresponds to the corresponding component name.
+Each key name in the configuration file `config.json` corresponds to the corresponding component name.
 
-such as：
+For example:
 
 ```json
 {
 	"head": {
-		"title": "SimonAKing",
+		"title": "Gavin",
 		"description": "Category:Personal Blog",
 		"favicon": "favicon.ico"
 	}
 }
 
 ```
-The above configuration information corresponds to the information in the following `layout/head.pug` component.
+The configuration information above corresponds to the information in the `layout/head.pug` component below.
 ```html
 head
 	title #{head.title}
@@ -74,36 +77,35 @@ head
 
 
 
-## Advanced configuration
+## Advanced Configuration
 
 ### WebGL-Fluid-Simulation
 
-Use [WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) as background at home.
+The homepage uses [WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) as background.
 
-If you want to turn it off, set `intro.background: false`.
+To disable it, please set `intro.background: false`.
 
 ### supportAuthor
 
-The `supportAuthor` option is turned on by default for configuration information, that is, authors are supported.
+The configuration information enables the `supportAuthor` option by default, which supports the author.
 
-All support items are as follows：
+All support items are as follows:
 
-1. The `octopus cat` will be displayed in the upper right corner of the home page.
-2. The console prints the author's site information
+1. Display `Octocat` in the top right corner of the homepage
+2. Console will print the author's site information
 
-If you want to turn it off, set `intro.author: false`.
+To disable, please set `intro.supportAuthor: false`.
 
+### Icon Replacement
+All icons in the project come from [Alibaba Vector Icon Library](https://www.iconfont.cn)
 
-### Icon replacement
-Icons in the project, all from [阿里巴巴矢量图标库](https://www.iconfont.cn)
+Replacement steps are as follows:
 
-The replacement steps are as follows:
-
-1. Please select your icon, add it to the project, and change the color to white.
+1. Select your icons, add them to the project, and change all colors to white.
 2. Click Font Class method
-3. Copy the contents of the generated link
-4. Replace the contents of the file `/src/css/common/icon.less`, where the contents of the `icon` selector must be preserved.
-5. Config.json the corresponding item in the `config.json`file`main.ul. * .icon`
+3. Copy the content in the generated link
+4. Replace the content in the file `css/common/icon.less`, where the content of the `icon` selector must be retained.
+5. Configure the corresponding item `main.ul.*.icon` in the `config.json` file
 
 ```css
 .icon {
@@ -122,135 +124,48 @@ The replacement steps are as follows:
 
 
 
-## Deployment
+## Project Deployment
 
-After executing `npm run build` under the root directory, the project file will be generated to the `dist` directory.
+Execute `npm run build` in the root directory, and the project files will be generated to the `dist` directory.
 
-You can then deploy the dist directory to your favorite server hosting provider.
+Then, you can deploy the `dist` directory to your favorite server hosting provider.
 
-The following is an example of `GithubPage`:
+Here is an example using `GithubPage`:
 
-1. create `userName.github.io` Repo
+1. Create a new `your-username.github.io` repository
 
 2. ```sh
    cd dist
    git init
    git add -A
    git commit -am"init"
-   git remote add origin https://github.com/userName/userName.github.io.git
+   git remote add origin https://github.com/WeiXingwuyou/WeiXingwuyou.github.io.git
    git push -f origin master
    ```
 
-3. Then set the repo's Github Page option in GitHub.
+3. Then set the `GithubPage` option for the repository in `Github`
 
-4. Visit `username.github.io` to browse!
-
-
-
-If your previous `username. github.io` repo already has content, you can create another repo, such as `blog`.
-
- Then migrate the occupied items to `blog` and set the `GithubPage` option for this repo.
-
- The repo became a subdirectory of `username. github.io/blog`.
-
- In this way, your `username. github.io` repo can be left to the home page!
+4. Visit `WeiXingwuyou.github.io` to browse!
 
 
 
-## Adding Pictures to Pics Page
+If your previous `username.github.io` repository already has content, you can create another repository, such as `blog`.
 
-The Pics page allows you to showcase your image gallery. To add pictures:
+Then migrate the occupied project to `blog`, and set the `GithubPage` option for this repository.
 
-1. Open the `pics.json` file in the root directory
-2. Add your picture details to the `pics` array with the following structure:
+And this repository becomes a subdirectory `username.github.io/blog`.
 
-```json
-{
-  "pics": [
-    {
-      "title": "Your Picture Title",
-      "description": "A brief description of the picture",
-      "thumbnail": "URL to thumbnail image",
-      "url": "URL to full-size image"
-    }
-  ]
-}
-```
+In this way, your `username.github.io` repository can be left for the homepage!
 
-3. After modifying `pics.json`, run `npm run build` to rebuild the project
-4. The pictures will be displayed in the Pics page accessible at `/pics.html`
+## Original Project Address
+Thanks to the open source author [SimonAKing](https://github.com/SimonAKing).
+Project address:
+https://github.com/SimonAKing/HomePage
 
-**Tips:**
-- Use thumbnail images for better performance (recommended size: 300x200)
-- The gallery is responsive and works on both desktop and mobile devices
-- Pictures are displayed in a grid layout with hover effects
-- Clicking on a picture will open it in a new tab at full size
 
-## Editing the About Page
+## Sponsorship
+Developing an excellent project requires a lot of time and energy investment.
 
-The About page displays a personal introduction with markdown support and icon support in headings. To edit:
-
-1. Open the `about.md` file in the root directory
-2. Edit the content using standard markdown syntax
-3. You can use emojis in headings (e.g., `## 🚀 About Me`)
-4. After modifying `about.md`, run `npm run build` to rebuild the project
-5. The updated content will be displayed in the About page accessible at `/about.html`
-
-**Supported Markdown Features:**
-- Headings with icons (using emojis)
-- Lists (ordered and unordered)
-- Links
-- Bold and italic text
-- Code blocks and inline code
-- Blockquotes
-- Tables
-- Horizontal rules
-- Images
-
-The page automatically renders markdown to HTML with a minimalist geek-style design, consistent with the overall project theme.
-
-## Adding Projects to Projects Page
-
-The Projects page showcases your projects in a timeline format with automatic date sorting and view switching capabilities. To add projects:
-
-1. Open the `projects.json` file in the root directory
-2. Add your project details to the `projects` array with the following structure:
-
-```json
-{
-  "projects": [
-    {
-      "title": "Project Name",
-      "description": "A brief description of the project",
-      "date": "2024-01-15",
-      "tags": ["React", "Node.js", "MongoDB"],
-      "link": "https://github.com/username/project",
-      "image": "https://via.placeholder.com/400x300"
-    }
-  ]
-}
-```
-
-3. After modifying `projects.json`, run `npm run build` to rebuild the project
-4. The projects will be displayed in the Projects page accessible at `/projects.html`
-
-**Features:**
-- **Automatic Date Sorting**: Projects are automatically sorted by date (newest first)
-- **View Toggle**: Switch between Simple View and Detail View using buttons in the top-right corner
-  - **Simple View**: Shows only title, date, and project link
-  - **Detail View**: Shows complete information including image, description, and tags
-- **Responsive Design**: Works on both desktop and mobile devices
-- **Timeline Layout**: Projects are displayed in a visually appealing timeline with hover effects
-
-**Tips:**
-- Use the ISO date format (YYYY-MM-DD) for proper sorting
-- The image field is optional; projects without images will display without the image section
-- Use descriptive tags to help categorize your projects
-- Images are recommended to be 400x300 pixels for optimal display
-
-## Sponsor
-I spent a lot of time and energy to develop this project.
-
-If this project has brought you help, welcome to sponsor, `star`.
+If this project has helped you, welcome to sponsor and `star`.
 
 Thank you!

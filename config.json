@@ -6,14 +6,14 @@
 	},
 	"intro": {
 		"title": "Gavin",
-		"subtitle": "Front back left right end engineer",
+		"subtitle": "Test Test Test Engineer",
 		"enter": "enter",
 		"supportAuthor": true,
 		"background": true
 	},
 	"main": {
 		"name": "Gavin",
-		"signature": "Code & Input & Output",
+		"signature": "Bug rollback verification release",
 		"avatar": {
 			"link": "assets/avatar.jpg",
 			"height": "100",

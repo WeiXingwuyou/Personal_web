@@ -1,20 +1,39 @@
 {
   "projects": [
     {
-      "title": "HomePage",
-      "description": "A modern and elegant personal homepage with fluid animation background, responsive design and smooth page transitions.",
-      "date": "2024-01-15",
-      "tags": ["Vue", "JavaScript", "Animation"],
-      "link": "https://github.com/SimonAKing/HomePage",
-      "image": "https://via.placeholder.com/400x300"
+      "title": "电缆厂无人叉车智能物流项目",
+      "description": "负责平衡重无人叉车整机测试与系统联调，完成 WMS‑TS‑R 调度系统全流程测试，规划厂区多车运行路线及管控区域，实现 4 台无人叉车协同调度运行。参与托盘识别算法数据采集与优化，推动识别准确率提升至 92%+，推动公司搭建轻量化网络透传工具，远程运维调试效率提升 30%+。",
+      "date": "2024.12",
+      "tags": ["无人叉车", "ROS", "Python", "系统联调", "测试自动化"],
+      "image": "https://s3.baishuijianxin.fun/personal_pics/avatar.jpg"
     },
     {
-      "title": "Another Project",
-      "description": "This is another example project. Add your own projects here.",
-      "date": "2023-12-01",
-      "tags": ["React", "Node.js"],
-      "link": "https://github.com/",
-      "image": "https://via.placeholder.com/400x300"
+      "title": "基于 MQTT 的无人车网络质量测试平台",
+      "description": "搭建车端‑后台 MQTT 通信测试环境，设计网络质量测试方案（网络延迟、丢包率、自动重连稳定性）。使用 Python + AI 编程工具开发自动化测试脚本，对比 4G / 5G / Wi‑Fi 网络表现差异，输出通信优化建议。",
+      "date": "2025.06",
+      "tags": ["MQTT", "Python", "网络测试", "自动化测试", "通信优化"],
+      "image": "https://via.placeholder.com/800x400"
+    },
+    {
+      "title": "750kV 变电站巡检机器人试点项目",
+      "description": "参与电力巡检机器人系统环境搭建，负责 750kV 变电站巡检点位规划与数据采集，支持整机第三方检测机构测试。参与电力服务器私有化部署及网络环境搭建，主导系统功能测试及南网 / 国网入网测试环境搭建。",
+      "date": "2022.05",
+      "tags": ["巡检机器人", "电力系统", "网络部署", "功能测试", "Linux"],
+      "image": "https://via.placeholder.com/800x400"
+    },
+    {
+      "title": "机器人整机硬件测试项目",
+      "description": "负责四转四驱巡检机器人整机硬件测试，编制并执行 2000+ 测试用例。搭建并维护硬件老化测试环境，开展长期稳定性与可靠性测试，参与样机试制及生产调试流程验证。",
+      "date": "2022.03",
+      "tags": ["硬件测试", "自动化测试", "质量保证", "测试用例"],
+      "image": "https://via.placeholder.com/800x400"
+    },
+    {
+      "title": "PLC 控制系统调试项目",
+      "description": "参与 PLC 控制系统调试，完成化工行业计量设备交付。独立分析并解决电气控制系统故障，提升系统稳定性，为后续自动化控制项目积累宝贵经验。",
+      "date": "2021.06",
+      "tags": ["PLC", "自动化控制", "电气系统", "工业控制"],
+      "image": "https://via.placeholder.com/800x400"
     }
   ]
 }

@@ -132,12 +132,14 @@
 		border-radius: 8px;
 		overflow: hidden;
 		display: block;
+		max-width: 800px;
 
 		img {
-			width: 100%;
-			height: auto;
+			width: 300px;
+			height: 200px;
 			display: block;
 			object-fit: cover;
+			max-width: 100%;
 		}
 	}
 
@@ -177,25 +179,6 @@
 				border: 1px solid rgba(88, 166, 255, 0.3);
 			}
 		}
-
-		.project-link {
-			a {
-				display: inline-block;
-				background: #58a6ff;
-				color: #fff;
-				padding: 10px 24px;
-				border-radius: 6px;
-				text-decoration: none;
-				font-weight: 500;
-				transition: all 0.3s ease;
-
-				&:hover {
-					background: #79b8ff;
-					transform: translateY(-2px);
-					box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
-				}
-			}
-		}
 	}
 
 	// 简洁视图模式
@@ -225,13 +208,6 @@
 				.project-date {
 					font-size: 0.8rem;
 					margin-bottom: 0;
-				}
-
-				.project-link {
-					a {
-						padding: 8px 16px;
-						font-size: 0.9rem;
-					}
 				}
 			}
 		}
@@ -323,13 +299,6 @@
 
 			.project-description {
 				font-size: 0.95rem;
-			}
-
-			.project-link {
-				a {
-					padding: 8px 20px;
-					font-size: 0.9rem;
-				}
 			}
 		}
 
