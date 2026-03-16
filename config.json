@@ -36,14 +36,14 @@
 				"text": "About"
 			},
 			"fourth": {
-				"href": "https://www.yuque.com/weiguoxian",
-				"icon": "yuque",
-				"text": "Yuque"
-			},
-			"fifth": {
 				"href": "mailto:wgx@baishuijianxin.top",
 				"icon": "email",
 				"text": "Email"
+			},
+			"fifth": {
+				"href": "https://www.yuque.com/weiguoxian",
+				"icon": "yuque",
+				"text": "Yuque"
 			}
 		}
 	}
