@@ -8,7 +8,7 @@
 		"title": "Gavin",
 		"subtitle": "Test Test Test Engineer",
 		"enter": "enter",
-		"supportAuthor": true,
+		"supportAuthor": false,
 		"background": true
 	},
 	"main": {
@@ -36,7 +36,7 @@
 				"text": "About"
 			},
 			"fourth": {
-				"href": "mailto:wgx@baishuijianxin.top",
+				"href": "mailto:hello@baishuijianxin.top",
 				"icon": "email",
 				"text": "Email"
 			},

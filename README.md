@@ -36,7 +36,10 @@ npm run dev
 7. Responsive, seamlessly supports mobile devices
 8. Total size of referenced `css` and `js` files is less than `18.5` kb!
 9. Delayed response to page switching events
-10. Many more features for you to explore...
+10. Back button on subpages for easy navigation to the homepage
+11. Modern redesigned about page with dynamic Markdown content updates
+12. Optimized project structure with removed unused dependencies
+13. Many more features for you to explore...
 
 
 
@@ -95,6 +98,31 @@ All support items are as follows:
 2. Console will print the author's site information
 
 To disable, please set `intro.supportAuthor: false`.
+
+### Back Button on Subpages
+
+Subpages (projects, about, pics) feature a back button in the top-left corner for easy navigation back to the homepage.
+
+- The back button is implemented with smooth SVG animation
+- Automatically appears on all subpages
+- Uses CSS transitions for hover effects
+- Configured in individual page templates (`projects.pug`, `about.pug`, `pics.pug`)
+
+### About Page Redesign
+
+The about page has been completely redesigned with a modern framework matching the homepage (`index.html`) design.
+
+Key features:
+- **Unified Design**: Same dark theme, gradient colors, and animations as the homepage
+- **Dynamic Content**: Markdown content from `about.md` automatically updates the page when changed
+- **Responsive Layout**: Full mobile support with adaptive components
+- **Enhanced Components**:
+  - Fixed navigation bar with smooth scrolling
+  - Hero section with avatar, personal info, and contact details
+  - Modern card-based content layout
+  - Scroll-to-top button with fade animation
+
+To update the about page content, simply edit the `about.md` file. The Gulp build process will automatically regenerate the page.
 
 ### Icon Replacement
 All icons in the project come from [Alibaba Vector Icon Library](https://www.iconfont.cn)

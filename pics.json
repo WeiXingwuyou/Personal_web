@@ -1,42 +1,66 @@
 {
 	"pics": [
 		{
-			"title": "示例图片1",
-			"description": "这是一个示例图片",
-			"thumbnail": "https://pic.baishuijianxin.top/piclist/1756361099",
-			"url": "https://pic.baishuijianxin.top/piclist/1756361099"
+			"title": "pika",
+			"description": "pika",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_134344_04.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_134344_04.jpg"
 		},
 		{
-			"title": "示例图片2",
-			"description": "这是另一个示例图片",
-			"thumbnail": "https://via.placeholder.com/600x400",
-			"url": "https://via.placeholder.com/800x600"
+			"title": "夜晚的电站",
+			"description": "夜晚的电站",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_134731_01.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_134731_01.jpg"
 		},
 		{
-			"title": "示例图片3",
+			"title": "电力巡检比赛",
 			"description": "大尺寸图片",
-			"thumbnail": "https://via.placeholder.com/600x400",
-			"url": "https://via.placeholder.com/800x600",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_135531_09.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_135531_09.jpg",
 			"size": "large"
 		},
 		{
-			"title": "示例图片4",
+			"title": "动漫1",
 			"description": "这是第四个示例图片",
-			"thumbnail": "https://via.placeholder.com/600x400",
-			"url": "https://via.placeholder.com/800x600"
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_140033_07.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_140033_07.jpg"
 		},
 		{
-			"title": "示例图片5",
+			"title": "泸州站",
 			"description": "宽幅图片",
-			"thumbnail": "https://via.placeholder.com/600x400",
-			"url": "https://via.placeholder.com/800x600",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_140952_07.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_140952_07.jpg",
 			"size": "wide"
 		},
 		{
-			"title": "示例图片6",
+			"title": "招商积余",
 			"description": "这是第六个示例图片",
-			"thumbnail": "https://via.placeholder.com/600x400",
-			"url": "https://via.placeholder.com/800x600"
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_140943_03.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_140943_03.jpg"
+		},
+		{
+			"title": "广州塔-夕阳",
+			"description": "这是第四个示例图片",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_135537_10.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_135537_10.jpg"
+		},
+		{
+			"title": "火箭",
+			"description": "这是第四个示例图片",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_134408_10.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_134408_10.jpg"
+		},
+		{
+			"title": "广州塔公园",
+			"description": "这是第四个示例图片",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_134749_07.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_134749_07.jpg"
+		},
+		{
+			"title": "广州塔-路",
+			"description": "这是第四个示例图片",
+			"thumbnail": "https://pic.baishuijianxin.top/ios/IMG_20260331_134745_06.jpg",
+			"url": "https://pic.baishuijianxin.top/ios/IMG_20260331_134745_06.jpg"
 		}
 	]
 }

@@ -49,6 +49,33 @@
 			color: #ccc;
 			font-weight: lighter;
 		}
+
+		.back-button {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			transition: all 0.3s ease;
+			z-index: 10;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.2);
+				transform: translateX(-3px);
+			}
+
+			.back-icon {
+				width: 24px;
+				height: 24px;
+				fill: #fff;
+			}
+		}
 	}
 
 	#about-container {

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin Wei - 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --border-color: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #bc8cff;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+            --gradient-start: #58a6ff;
+            --gradient-end: #bc8cff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 0 2rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(88, 166, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(188, 140, 255, 0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 60px rgba(88, 166, 255, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 60px rgba(88, 166, 255, 0.3); }
+            50% { box-shadow: 0 0 80px rgba(88, 166, 255, 0.5); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-blue);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            transform: translateX(-5px);
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+        }
+
+        .timeline-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateX(5px);
+        }
+
+        .timeline-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-card .company {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .timeline-card .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-card li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .timeline-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-card .project-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-green);
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3 i {
+            color: var(--accent-green);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            color: var(--accent-blue);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+
+        .award-card:hover {
+            border-color: var(--accent-orange);
+        }
+
+        .award-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(210, 153, 34, 0.2), rgba(210, 153, 34, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .award-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .award-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Self Evaluation */
+        .evaluation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .evaluation-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .evaluation-card li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .evaluation-card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(88, 166, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">Gavin Wei</div>
+            <ul class="nav-links">
+                <li><a href="#about">关于</a></li>
+                <li><a href="#experience">经历</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#awards">荣誉</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-avatar">🤖</div>
+            <h1>Gavin Wei</h1>
+            <p class="subtitle">机器人测试工程师</p>
+            <p class="tagline">专注无人车系统测试与联调，推动机器人从实验室走向落地应用</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>湖北武汉</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>159--------</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hello@baishuijianxin.top</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>1999-08-24</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="mailto:hello@baishuijianxin.top" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> 联系我
+                </a>
+                <a href="#experience" class="btn btn-outline">
+                    <i class="fas fa-arrow-down"></i> 了解更多
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+        <div class="section-header fade-in">
+            <h2>🎓 教育背景</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-card">
+                    <h3>武汉商学院</h3>
+                    <div class="company">本科 · 机器人工程</div>
+                    <div class="date">2017.09 – 2021.07</div>
+                    <ul>
+                        <li>主修课程：数据结构、操作系统、计算机网络、自动控制原理、人工智能、机器人技术</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="section-header fade-in">
+            <h2>💼 工作经历</h2>
+            <p>从硬件测试到系统联调，逐步成长为机器人全栈测试工程师</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-card">
+                    <h3>机器人测试工程师</h3>
+                    <div class="company">立得空间技术股份有限公司</div>
+                    <div class="date">2024.12 – 至今</div>
+                    <ul>
+                        <li>负责无人叉车项目整机测试及系统联调，推动公司首个民用无人叉车项目（4 台设备）成功落地</li>
+                        <li>参与化工厂防爆叉车联合项目，完成技术评审、系统联调与功能演示，负责光通信、后台服务及自动充电系统调试</li>
+                        <li>负责无人平板车 / 牵引车 / 叉车整机下线测试及中试验证，输出测试大纲及测试报告</li>
+                        <li>任职期间累计：输出调试文档 15+，项目测试报告 5+，提交缺陷 180+</li>
+                        <li>引入并推广 Foxglove、NPS/NPC 网络透传工具，显著提升远程调试效率</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-card">
+                    <h3>硬件测试工程师</h3>
+                    <div class="company">广州高新兴机器人有限公司</div>
+                    <div class="date">2022.03 – 2024.07</div>
+                    <ul>
+                        <li>负责四转四驱巡检机器人整机硬件测试，编制并执行 2000+ 测试用例</li>
+                        <li>搭建并维护硬件老化测试环境，开展长期稳定性与可靠性测试，加速问题暴露并降低故障率</li>
+                        <li>参与样机试制及生产调试流程验证，优化生产测试流程</li>
+                        <li>参与电力巡检 C/S 系统测试：功能测试覆盖率 90%+，BUG 有效率 87%+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-card">
+                    <h3>自动化控制实习生</h3>
+                    <div class="company">珠海长陆工业自动化控制有限公司</div>
+                    <div class="date">2021.06 – 2021.12</div>
+                    <ul>
+                        <li>参与 PLC 控制系统调试，完成化工行业计量设备交付</li>
+                        <li>独立分析并解决电气控制系统故障，提升系统稳定性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="section-header fade-in">
+            <h2>🚀 项目经验</h2>
+            <p>每个项目都是一次从 0 到 1 的突破</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <h3>电缆厂无人叉车智能物流项目</h3>
+                <div class="project-date">立得空间 · 2024.12 – 2025.08</div>
+                <ul>
+                    <li>负责平衡重无人叉车整机测试与系统联调，完成 WMS‑TS‑R 调度系统全流程测试</li>
+                    <li>规划厂区多车运行路线及管控区域，实现 4 台无人叉车协同调度运行</li>
+                    <li>完成项目整体验收测试</li>
+                    <li>参与托盘识别算法数据采集与优化，推动识别准确率提升至 92%+</li>
+                    <li>推动公司搭建轻量化网络透传工具，远程运维调试效率提升 30%+</li>
+                </ul>
+            </div>
+            <div class="project-card fade-in">
+                <h3>基于 MQTT 的无人车网络质量测试平台</h3>
+                <div class="project-date">立得空间 · 2025.06 – 2025.08</div>
+                <ul>
+                    <li>搭建车端‑后台 MQTT 通信测试环境，设计网络质量测试方案（网络延迟、丢包率、自动重连稳定性）</li>
+                    <li>使用 Python + AI 编程工具开发自动化测试脚本，对比 4G / 5G / Wi‑Fi 网络表现差异，输出通信优化建议</li>
+                </ul>
+            </div>
+            <div class="project-card fade-in">
+                <h3>750kV 变电站巡检机器人试点项目</h3>
+                <div class="project-date">高新兴机器人 · 2022.05 – 2023.10</div>
+                <ul>
+                    <li>参与电力巡检机器人系统环境搭建，负责 750kV 变电站巡检点位规划与数据采集</li>
+                    <li>支持整机第三方检测机构测试，参与电力服务器私有化部署及网络环境搭建</li>
+                    <li>主导系统功能测试及南网 / 国网入网测试环境搭建</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="section-header fade-in">
+            <h2>🛠 技能</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-code"></i> 软件与开发</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">ROS</span>
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">AI 编程工具</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-network-wired"></i> 通信与系统</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MQTT</span>
+                    <span class="skill-tag">WebSocket</span>
+                    <span class="skill-tag">网络部署</span>
+                    <span class="skill-tag">运维</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-vial"></i> 测试与工具</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Foxglove</span>
+                    <span class="skill-tag">禅道</span>
+                    <span class="skill-tag">云效</span>
+                    <span class="skill-tag">NPS/NPC</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-certificate"></i> 证书</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">低压电工证</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section class="section" id="awards">
+        <div class="section-header fade-in">
+            <h2>🏆 荣誉与成果</h2>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card fade-in">
+                <div class="award-icon">🥉</div>
+                <div>
+                    <h4>三维数字化创新设计大赛三等奖</h4>
+                    <p>大学期间连续两届获奖</p>
+                </div>
+            </div>
+            <div class="award-card fade-in">
+                <div class="award-icon">📜</div>
+                <div>
+                    <h4>CN202323644925.3</h4>
+                    <p>高新兴机器人工作期间参与申请专利</p>
+                </div>
+            </div>
+            <div class="award-card fade-in">
+                <div class="award-icon">🎨</div>
+                <div>
+                    <h4>CN202030577903.2</h4>
+                    <p>个人项目专利（三维建模 & 3D 打印创新项目）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self Evaluation -->
+    <section class="section" id="evaluation">
+        <div class="section-header fade-in">
+            <h2>🙋 自我评价</h2>
+        </div>
+        <div class="evaluation-card fade-in">
+            <ul>
+                <li>具备机器人整机测试、系统联调及项目交付经验</li>
+                <li>熟悉无人叉车 / 巡检机器人系统架构与调度逻辑</li>
+                <li>熟练使用 Linux、Python、MQTT 等技术进行测试与调试</li>
+                <li>具备问题定位、系统优化及跨团队协作能力，工作严谨细致，擅长工程实践与现场解决问题</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Gavin Wei · 用心测试每一个机器人 🤖</p>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
