@@ -5,35 +5,154 @@
       "description": "搭建车端‑后台 MQTT 通信测试环境，设计网络质量测试方案（网络延迟、丢包率、自动重连稳定性）。使用 Python + AI 编程工具开发自动化测试脚本，对比 4G / 5G / Wi‑Fi 网络表现差异，输出通信优化建议。",
       "date": "2025.06",
       "tags": ["MQTT", "Python", "网络测试", "自动化测试", "通信优化"],
-      "image": "https://pic.baishuijianxin.top/ios/netinfo.png"
+      "image": "https://pic.baishuijianxin.top/ios/netinfo.png",
+      "python_tools": [
+        "MQTT_TEST工具集 - 包含ICMP ping测试、MQTT ping-pong延迟测试、AP切换检测",
+        "MQTT连接日志分析 - 解析连接事件和Pose更新频率",
+        "急停位置记录 - 实时监控机器人状态并记录位置信息"
+      ]
     },
     {
       "title": "电缆厂无人叉车智能物流项目",
       "description": "负责平衡重无人叉车整机测试与系统联调，完成 WMS‑TS‑R 调度系统全流程测试，规划厂区多车运行路线及管控区域，实现 4 台无人叉车协同调度运行。参与托盘识别算法数据采集与优化，推动识别准确率提升至 92%+，推动公司搭建轻量化网络透传工具，远程运维调试效率提升 30%+。",
       "date": "2024.12",
       "tags": ["无人叉车", "ROS", "Python", "系统联调", "测试自动化"],
-      "image": "https://pic.baishuijianxin.top/ios/IMG_9851.JPG"
+      "image": "https://pic.baishuijianxin.top/ios/IMG_9851.JPG",
+      "python_tools": [
+        "叉车臂控制自动化测试 - 自动化测试叉齿升降/横移/倾倒，支持矩阵/简化双测试模式",
+        "MQTT任务时间监控 - 监听机器人arrive/goto事件，计算响应时间差",
+        "LDZN MQTT监控 - 支持60+话题分类管理、批量订阅、灯光IO控制",
+        "MQTT定位数据采集 - 手动触发式收集机器人定位数据"
+      ]
     },
     {
       "title": "750kV 变电站巡检机器人试点项目",
       "description": "参与电力巡检机器人系统环境搭建，负责 750kV 变电站巡检点位规划与数据采集，支持整机第三方检测机构测试。参与电力服务器私有化部署及网络环境搭建，主导系统功能测试及南网 / 国网入网测试环境搭建。",
       "date": "2022.05",
       "tags": ["巡检机器人", "电力系统", "网络部署", "功能测试", "Linux"],
-      "image": "https://pic.baishuijianxin.top/ios/IMG_20260331_134405_09.jpg"
+      "image": "https://pic.baishuijianxin.top/ios/IMG_20260331_134405_09.jpg",
+      "python_tools": [
+        "里程电量记录 - GUI数据采集器，订阅MQTT电池和里程话题"
+      ]
     },
     {
       "title": "机器人整机硬件测试项目",
       "description": "负责四转四驱巡检机器人整机硬件测试，编制并执行 2000+ 测试用例。搭建并维护硬件老化测试环境，开展长期稳定性与可靠性测试，参与样机试制及生产调试流程验证。",
       "date": "2022.03",
       "tags": ["硬件测试", "自动化测试", "质量保证", "测试用例"],
-      "image": "https://pic.baishuijianxin.top/ios/IMG_20260331_134735_02.jpg"
+      "image": "https://pic.baishuijianxin.top/ios/IMG_20260331_134735_02.jpg",
+      "python_tools": [
+        "急停位置记录 - 实时监控硬件状态异常并记录位置信息"
+      ]
     },
     {
       "title": "PLC 控制系统调试项目",
       "description": "参与 PLC 控制系统调试，完成化工行业计量设备交付。独立分析并解决电气控制系统故障，提升系统稳定性，为后续自动化控制项目积累宝贵经验。",
       "date": "2021.06",
       "tags": ["PLC", "自动化控制", "电气系统", "工业控制"],
-      "image": "https://via.placeholder.com/800x400"
+      "image": "https://pic.baishuijianxin.top/ios/1765851457168707.jpg",
+      "python_tools": [
+        "PID控制 - 步进/伺服"
+      ]
     }
-  ]
+  ],
+  "python_toolkit_summary": {
+    "total_tools": 10,
+    "categories": {
+      "MQTT数据采集": ["MQTT定位数据采集", "急停位置记录", "里程电量记录", "MQTT_TEST collectors"],
+      "监控分析": ["MQTT任务时间监控", "MQTT连接日志分析", "MQTT_TEST visualizers"],
+      "控制测试": ["叉车臂控制自动化测试", "LDZN MQTT监控与灯光控制"],
+      "报告生成": ["测试数据看板", "Excel测试报告生成器"]
+    },
+    "core_technologies": ["paho-mqtt", "Python", "Tkinter", "pandas", "openpyxl", "matplotlib", "PyQt5"],
+    "deployment_status": {
+      "packaged_tools": ["Excel测试报告生成器(EXE)", "里程电量记录(EXE)"],
+      "cli_tools": ["急停位置记录", "MQTT连接日志分析", "叉车臂控制自动化测试"],
+      "gui_tools": ["LDZN MQTT监控", "MQTT任务时间监控", "测试数据看板"]
+    },
+    "tools_details": [
+      {
+        "name": "急停位置记录",
+        "description": "实时监听机器人MQTT消息，当急停触发时自动记录当前坐标(X,Y)和时间戳，保存为JSON-lines格式",
+        "technical_solution": "Python + paho-mqtt，订阅位姿和急停状态Topic，JSON-lines格式逐行存储记录",
+        "dependencies": ["paho-mqtt"],
+        "category": "MQTT数据采集",
+        "detailed_description": "监听机器人位姿和急停状态，急停触发时自动记录位置。持续订阅位姿Topic，维护全局最新X,Y坐标；监听急停状态Topic，当args[0] == true时触发记录。记录内容：时间戳、格式化时间、X坐标、Y坐标。输出格式：JSON-lines（每行一条记录），追加写入emergency_stop_records.txt。"
+      },
+      {
+        "name": "LDZN MQTT监控",
+        "description": "双模式MQTT监控工具，支持14类60+话题分类管理、批量订阅、5路灯光IO控制",
+        "technical_solution": "Python + Tkinter GUI，5模块架构(main/mqtt_client/data_handler/topic_parser/ui_manager)，集成网页特征ID自动获取和灯光控制API",
+        "dependencies": ["paho-mqtt", "requests", "beautifulsoup4", "lxml"],
+        "category": "控制测试",
+        "detailed_description": "MQTT消息监听、话题分类管理、批量订阅、5路灯光IO控制。双模式连接：服务器模式(手动输入特征信息)/客户端模式(自动从8088端口获取)。话题分类：地图、定位、导航、规划、控制、任务、动作、传感、感知、IO、底盘、诊断、消息、系统共14类。批量订阅：支持全选/全不选、批量订阅/取消订阅。5路灯光控制：行车灯(80)、警示灯(81)、左转向灯(82)、右转向灯(83)、制动灯(84)。"
+      },
+      {
+        "name": "MQTT连接日志分析",
+        "description": "解析MQTT-ROS桥接日志，提取连接事件和Pose更新时间序列，生成CSV统计报告",
+        "technical_solution": "Python标准库解析日志文件，正则匹配时间戳，按连接分组统计Pose更新频率",
+        "dependencies": ["标准库"],
+        "category": "监控分析",
+        "detailed_description": "解析MQTT-ROS桥接日志，统计连接事件和Pose更新。扫描'connected to server!'识别连接事件；扫描'Connect success ,update Pose'追踪每次连接的Pose更新。自定义时间解析：格式IMMDD HH:MM:SS.µµµµµµ，假设年份2025。按连接分组，统计每次连接的Pose更新次数和时间范围。"
+      },
+      {
+        "name": "MQTT任务时间监控",
+        "description": "监听机器人arrive/goto事件，计算响应时间差，提供完整GUI监控界面和数据可视化",
+        "technical_solution": "Python + paho-mqtt + Tkinter + Matplotlib(可选)，支持多机器人同时监控，配置持久化，线程安全",
+        "dependencies": ["paho-mqtt", "matplotlib(可选)"],
+        "category": "监控分析",
+        "detailed_description": "监听机器人到达/移动事件，计算响应时间差，提供完整GUI监控。三种运行模式：CLI单机器人(mqtt_listener.py)、CLI多机器人(arrive_listener.py)、GUI综合监控(mqtt_monitor_gui.py)。GUI版核心特性：配置保存/加载（config.ini）、三路MQTT订阅、实时消息显示（deque缓冲1000条）、双数据表、线程安全数据更新、可选Matplotlib可视化、100ms UI刷新周期。"
+      },
+      {
+        "name": "MQTT定位数据采集",
+        "description": "手动触发式收集机器人定位数据(X,Y坐标和Z轴旋转角度)，按Enter键采集并保存到CSV",
+        "technical_solution": "Python + paho-mqtt，手动触发采集机制，支持多车ID切换，CSV格式持久化存储",
+        "dependencies": ["paho-mqtt"],
+        "category": "MQTT数据采集",
+        "detailed_description": "手动触发式收集机器人实时定位数据。核心机制：异步MQTT连接（5秒超时）、维护全局最新位姿数据、手动触发采集（按Enter键采集一次，输入exit退出）、自动创建CSV文件及表头。MQTT配置：Broker: 192.168.27.101:1883，默认Topic: /robot4inspection/b3e02997591fa26e/localization/pose（二号车）。"
+      },
+      {
+        "name": "叉车臂控制自动化测试",
+        "description": "自动化测试叉齿升降/横移/倾倒，记录姿态参数、误差值和IO状态，支持矩阵/简化双测试模式",
+        "technical_solution": "Python + requests，HTTP API控制叉车，支持time_based和variance_based两种稳定判断方法，Ctrl+C优雅中断",
+        "dependencies": ["requests"],
+        "category": "控制测试",
+        "detailed_description": "自动化测试叉齿升降/横移/倾倒，记录姿态参数、IO状态和误差。配置说明：base_url, test_points, stabilization配置。稳定判断双模式：time_based（固定等待指定秒数）、variance_based（滑动窗口方差判断，数据稳定后自动继续）。API接口：获取状态GET /forklift/state、控制叉臂POST /forklift/arm/move。安全机制：每轮测试前后自动回到原点、Ctrl+C优雅中断、中断时也会执行回原点操作。"
+      },
+      {
+        "name": "测试数据看板",
+        "description": "Excel测试用例进度统计，三级策略自动识别结果列，状态归一化，生成Mermaid饼图可视化报告",
+        "technical_solution": "Python + pandas + openpyxl，三级列检测(精确匹配>包含匹配>内容匹配)，广关键词状态归一化",
+        "dependencies": ["pandas", "openpyxl"],
+        "category": "报告生成",
+        "detailed_description": "Excel测试用例进度统计，自动识别结果状态，生成可视化报告。三级列检测策略：1.精确匹配列名为'结果'；2.包含'结果'但不包含'预期'/'期望'；3.列内容包含状态关键词。状态归一化关键词覆盖：通过(OK, PASS, PASSED, 通过, 成功, SUCCESS等)、失败(NG, FAIL, FAILED, 失败等)、阻塞(BLOCKED, 阻塞)、跳过(SKIPPED, 跳过)、未执行(空值、>20字符的异常值)。"
+      },
+      {
+        "name": "Excel测试报告生成器",
+        "description": "桌面GUI工具，读取Excel测试用例并生成Markdown统计报告，已打包为Windows可执行文件",
+        "technical_solution": "Python + Tkinter + pandas，双标签页界面(使用说明+主功能)，线程化报告生成，PyInstaller打包为EXE",
+        "dependencies": ["pandas", "openpyxl"],
+        "category": "报告生成",
+        "detailed_description": "桌面GUI工具，读取Excel测试用例并生成Markdown统计报告，已打包为EXE。双标签页界面：使用说明标签页（滚动式帮助文档，说明格式要求、识别规则、状态值）、主功能标签页（文件选择、报告生成（线程化）、预览、保存）。使用流程：启动程序、点击'浏览'选择Excel文件、点击'生成报告'、在预览区域查看结果、点击'保存报告'导出为Markdown文件。"
+      },
+      {
+        "name": "MQTT_TEST",
+        "description": "MQTT数据采集和可视化工具集，包含7个采集器、6个可视化脚本和4个工具脚本",
+        "technical_solution": "Python脚本集，支持ICMP/MQTT ping-pong/AP切换检测，PyQt5交互可视化，多机器人同时采集",
+        "dependencies": ["paho-mqtt", "matplotlib", "PyQt5", "pandas", "numpy", "psutil"],
+        "category": "MQTT数据采集",
+        "detailed_description": "MQTT数据采集和可视化工具集合。项目结构：scripts/collectors/(7个采集器)、scripts/visualizers/(6个可视化工具)、scripts/utils/(4个工具脚本)。主要功能：ICMP ping测试（单机器人/多机器人ICMP网络延迟测试）、MQTT ping-pong（应用层延迟测试，支持AP切换检测和CSV输出）、位姿数据采集（单机器人位姿实时订阅）、可视化（XY坐标+RTT散点图、航向箭头图、热力图、缺失数据标记、彩色映射）、PyQt5 GUI（交互式文件选择和数据可视化）。"
+      },
+      {
+        "name": "里程电量记录",
+        "description": "GUI数据采集器，订阅MQTT电池和里程话题，数据缓冲后手动触发记录，支持新旧双CSV格式，已打包为EXE",
+        "technical_solution": "Python + Tkinter + paho-mqtt，数据缓冲+手动触发架构，后台数据处理线程，双CSV格式自动检测兼容",
+        "dependencies": ["paho-mqtt"],
+        "category": "MQTT数据采集",
+        "detailed_description": "MQTT电池和里程数据采集器，数据缓冲后手动触发记录。核心架构：数据缓冲 + 手动触发（电池和里程数据分别订阅、分别缓冲；用户点击'记录数据'时，合并最新电池+里程数据写入CSV；后台数据处理器线程 + 队列，避免UI阻塞）。双CSV格式支持：新格式（时间, 电量, 累计里程, 设备ID）、旧格式（时间戳, 设备ID, 电池电压, 电流, 电量百分比, 里程, 速度等详细字段）。自动检测已有CSV文件格式，保持向后兼容。"
+      }
+    ]
+  },
+  "integration_notes": "本整合文档将用户项目经历与PYTHON项目功能汇总报告相结合，展示了在各个项目中应用的Python工具和技术栈。每个项目都关联了相应的Python工具，体现了从硬件测试、MQTT通信到自动化报告生成的完整技术链条。",
+  "last_updated": "2026-04-20"
 }

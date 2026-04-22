@@ -46,5 +46,71 @@ html(lang="en")
 										.project-tags
 											each tag in project.tags
 												.tag= tag
+										if project.python_tools && project.python_tools.length
+											.project-python-tools
+												h4 相关Python工具
+												.python-tools-list
+													each tool in project.python_tools
+														.python-tool-item= tool
+
+					.python-summary
+						h2 Python 项目功能汇总报告
+						
+						.python-toolkit-overview
+							.python-toolkit-card
+								h3 🛠 Python工具集概览
+								.python-stats
+									.stat-item
+										.stat-label 工具总数
+										.stat-value #{python_toolkit_summary.total_tools}
+									.stat-item
+										.stat-label 核心技术
+										.stat-value #{python_toolkit_summary.core_technologies.length}
+									.stat-item
+										.stat-label 分类数量
+										.stat-value #{Object.keys(python_toolkit_summary.categories).length}
+								
+								h4 功能分类
+								each category, name in python_toolkit_summary.categories
+									.category-item
+										.category-name= name
+										.category-tools
+											each tool in category
+												.category-tool= tool
+								
+								h4 核心技术栈
+								.tech-stack
+									each tech in python_toolkit_summary.core_technologies
+										.tech-tag= tech
+								
+								h4 部署状态
+								.deployment-status
+									each type, name in python_toolkit_summary.deployment_status
+										.deployment-type
+											.deployment-name= name
+											.deployment-tools
+												each tool in type
+													.deployment-tool= tool
+						
+						.python-tools-library
+							h3 🧰 Python工具库
+							.tools-grid
+								each tool in python_toolkit_summary.tools_details
+									.tool-card(data-category=tool.category)
+										.tool-header
+											h4.tool-name= tool.name
+											.tool-category= tool.category
+										.tool-description= tool.description
+										.tool-technical
+											strong 技术方案：
+											= tool.technical_solution
+										.tool-dependencies
+											strong 主要依赖：
+											.dependency-tags
+												each dep in tool.dependencies
+													.dependency-tag= dep
+										.tool-detailed
+											strong 详细功能：
+											= tool.detailed_description
 
 		script(src="js/projects.js")

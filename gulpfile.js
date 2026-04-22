@@ -119,11 +119,12 @@ gulp.task('pug-about', function () {
 })
 
 gulp.task('pug-projects', function () {
-	const projectsConfig = require('./projects.json');
-	return gulp
-		.src('./src/projects.pug')
-		.pipe(pug({ data: { ...config, ...projectsConfig } }))
-		.pipe(gulp.dest('./dist'))
+  const projectsConfig = require('./projects.json');
+  const pythonSummary = marked.parse(fs.readFileSync('./python_projects_summary.md', 'utf-8'));
+  return gulp
+    .src('./src/projects.pug')
+    .pipe(pug({ data: { ...config, ...projectsConfig, pythonSummary } }))
+    .pipe(gulp.dest('./dist'))
 })
 
 gulp.task('assets', function () {
